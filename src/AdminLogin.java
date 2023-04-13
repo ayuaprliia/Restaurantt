@@ -24,8 +24,9 @@ public class AdminLogin {
 
             // validasi input username dan password
             if (InputUsername.equals(username) && InputPassword.equals(password)) {
-                System.out.println("\n|==================================================|");
-                System.out.println("      LOG IN BERHASIL! Selamat datang, " + namaAdmin + "!");
+                System.out.println("\n|================================================|");
+                System.out.println("|                   LOG IN BERHASIL!               |");
+                System.out.println("                  Selamat Datang, "+ namaAdmin +"!");
                 System.out.println("|                                                  |");
                 System.out.println("|==================================================|");
                 login = true;
