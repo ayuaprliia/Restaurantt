@@ -15,7 +15,7 @@ public class AdminLogin {
             System.out.println("---------LOG IN ADMIN----------");
             System.out.println(" Masukkan data yang diperlukan!");
             System.out.println("===============================");
-            System.out.print("|Nama     :");
+            System.out.print("|Nama     : ");
             String namaAdmin = input.nextLine();
             System.out.print("|Username : ");
             String InputUsername = input.nextLine();
@@ -24,11 +24,10 @@ public class AdminLogin {
 
             // validasi input username dan password
             if (InputUsername.equals(username) && InputPassword.equals(password)) {
-                System.out.println("\n|================================================|");
-                System.out.println("|                   LOG IN BERHASIL!               |");
+                System.out.println("\n================================================");
+                System.out.println("                   LOG IN BERHASIL!               ");
                 System.out.println("                  Selamat Datang, "+ namaAdmin +"!");
-                System.out.println("|                                                  |");
-                System.out.println("|==================================================|");
+                System.out.println("==================================================");
                 login = true;
             } else {
                 System.out.println("OOPS, Username atau Password salah!");
