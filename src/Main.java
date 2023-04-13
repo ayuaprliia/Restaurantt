@@ -15,8 +15,9 @@ public class Main {
         }
 
         public static void beranda(){
-                Scanner scanner = new Scanner(System.in);
+                Scanner input = new Scanner(System.in);
                 AdminLogin loginadmin = new AdminLogin();
+                CustomerLogin customer = new CustomerLogin();
                 int pilih;
                 boolean isExit = false;
 
@@ -31,14 +32,14 @@ public class Main {
                         System.out.println("|=======================================|");
 
                         System.out.println("Masukkan Pilihan Anda [1][2][3] : ");
-                        pilih = scanner.nextInt();
+                        pilih = input.nextInt();
 
                         switch (pilih) {
                                 case 1:
                                         loginadmin.admin();
                                         break;
                                 case 2:
-                                        System.out.println("anda memilih pelanggan");
+                                        customer.LoginCustomer();
                                         break;
                                 case 3:
                                         System.out.println("|======================================|");
