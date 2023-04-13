@@ -8,7 +8,7 @@ public class AdminLogin {
 
         // Input nama, username, dan password
         Scanner input = new Scanner(System.in);
-        boolean login = false;
+        boolean login = false; //untuk validasi input username dan password
 
         while (!login) {
             System.out.println("===============================");
@@ -24,7 +24,7 @@ public class AdminLogin {
 
             // validasi input username dan password
             if (InputUsername.equals(username) && InputPassword.equals(password)) {
-                System.out.println("Selamat datang, " + namaAdmin + "!");
+                System.out.println("LOG IN BERHASIL! Selamat datang, " + namaAdmin + "!");
                 login = true;
             } else {
                 System.out.println("OOPS, Username atau Password salah!");
