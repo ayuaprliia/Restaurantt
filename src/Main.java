@@ -10,9 +10,8 @@ public class Main {
                 System.out.println("|               FOOD RUSH                   |");
                 System.out.println("|------YOUR NO. 1 FOOD DELIVERY SERVICE-----|");
                 System.out.println("|===========================================|");
-                System.out.println("Press any key to continue..."); //untuk lanjut ke menu berikutnya
+                System.out.print("Press any key to continue..."); //untuk lanjut ke menu berikutnya
                 scanner.nextLine(); //membaca input user
-                System.out.println("Please Wait...");
                 loginadmin.admin();
 
 
