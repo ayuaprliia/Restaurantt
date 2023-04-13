@@ -18,6 +18,9 @@ public class Main {
                 Scanner scanner = new Scanner(System.in);
                 AdminLogin loginadmin = new AdminLogin();
                 int pilih;
+                boolean isExit = false;
+
+                do{
                         System.out.println("\n|=======================================|");
                         System.out.println("|               FOOD RUSH               |");
                         System.out.println("|  YOUR NUMBER 1 FOOD DELIVERY SERVICE  |");
@@ -38,10 +41,17 @@ public class Main {
                                         System.out.println("anda memilih pelanggan");
                                         break;
                                 case 3:
-                                        System.exit(0);
+                                        System.out.println("|======================================|");
+                                        System.out.println("|          ANDA MEMILIH KELUAR         |");
+                                        System.out.println("|              TERIMA KASIH            |");
+                                        System.out.println("|======================================|");
+                                        isExit = true;
                                         break;
                                 default:
                                         System.out.println("Mohon Input Sesuai Arahan!");
+                                        break;
                         }
+                        System.out.println();
+                }while (!isExit);
         }
 }
