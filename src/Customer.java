@@ -1,3 +1,5 @@
+import java.net.SocketTimeoutException;
+import java.sql.SQLOutput;
 import java.util.*;
 public class Customer {
     private String nama, username, password;
@@ -38,38 +40,48 @@ public class Customer {
         this.password = password;
     }
 
-    public void LoginCustomer(){
+    public void regisCustomer(){
+        Scanner scanner = new Scanner(System.in);
+        Main login = new Main();
         credential(); //menerima input detail data customer/pelanggan
 
         boolean isCustomerLoginExist = false;
         for (Customer customer : customers) {
             if (customer.nama.equals(nama)){
                 isCustomerLoginExist = true;
-                System.out.println("Akun sudah terdaftar!");
+                System.out.println("|+=========================================+|");
+                System.out.println("|             Akun sudah terdaftar!         |");
+                System.out.println("|+=========================================+|");
                 break;
             }
         }//memeriksa apakah data customer cocok dengan CustomerLogin
         if (!isCustomerLoginExist){
             customers.add(this);
-            System.out.println("Akun Berhasil Ditambahkan!");
-            AkunCustomer(); //membuat akun customer baru dan memperlihatkannya pada saat akun berhasil dibuat
+            System.out.println("|+=========================================+|");
+            System.out.println("|          Akun Berhasil Ditambahkan!       |");
+            System.out.println("|+=========================================+|");
         }
     }
 
     public void credential(){
         //menerima detail data (credential)  dan mengecek input password
+        CLS.clearScreen();
         input = new Scanner(System.in);
-        System.out.println("Create New Account");
-        System.out.print("masukkan nama : ");
+        System.out.println("\n|+======================================+|");
+        System.out.println("|               MEMBUAT AKUN BARU        | ");
+        System.out.println("|+======================================+|");
+        System.out.print("Masukkan nama : ");
         nama = input.nextLine();
-        System.out.print("masukkan username : ");
+        System.out.print("Masukkan username : ");
         username = input.nextLine();
-        System.out.print("masukkan password : ");
+        System.out.print("Masukkan password : ");
         String passwordBaru = input.nextLine();
-        System.out.print("masukkan ulang password :");
+        System.out.print("Masukkan ulang password :");
         String passwordUlang = input.nextLine();
         while (!passwordBaru.equals(passwordUlang)){
-            System.out.println("password tidak cocok! Coba lagi.");
+            System.out.println("|+======================================+|");
+            System.out.println("|    PASSWORD TIDAK COCOK! COBA LAGI!    |");
+            System.out.println("|+======================================+|");
             System.out.print("masukkan password : ");
             passwordBaru = input.nextLine();
             System.out.print("masukkan ulang password : ");
@@ -78,7 +90,7 @@ public class Customer {
         password = passwordBaru;
     }
 
-    public boolean isValidCustomerLogin(){
+    public boolean isValidCustomer(){
         boolean isValid = false;
         for (Customer customer : customers){
             if (customer.username.equals(username) && customer.password.equals(password))
@@ -87,16 +99,5 @@ public class Customer {
         return isValid; //memvalidasi data customer
     }
 
-    public void AkunCustomer (){
-        System.out.println("akun customer");
-        int count = 1;
-        for (Customer customer : customers){
-            System.out.print(count + "Nama Customer :");
-            System.out.println(customer.nama);
-            System.out.print("Username :");
-            System.out.println(customer.username);
-            count++;
-
-        }
     }
-}
+

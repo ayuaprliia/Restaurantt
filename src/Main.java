@@ -1,10 +1,14 @@
 import java.util.Scanner;
 
 public class Main {
+        private static Scanner input;
         //membuat tampilan awal
         public static void main(String[] args) {
-                Scanner scanner = new Scanner(System.in);
+                opening();
+        }
 
+        public static void opening (){
+                Scanner scanner = new Scanner(System.in);
                 System.out.println("|=================WELCOME!==================|");
                 System.out.println("|               FOOD RUSH                   |");
                 System.out.println("|------YOUR NO. 1 FOOD DELIVERY SERVICE-----|");
@@ -16,7 +20,7 @@ public class Main {
 
         public static void beranda(){
                 Scanner input = new Scanner(System.in);
-                AdminLogin loginadmin = new AdminLogin();
+                Admin loginadmin = new Admin();
                 Customer customer = new Customer();
                 int pilih;
                 boolean isExit = false;
@@ -39,8 +43,9 @@ public class Main {
                                 case 1:
                                         loginadmin.admin();
                                         break;
+
                                 case 2:
-                                        customer.LoginCustomer();
+                                        loginCustomer();
                                         break;
                                 case 3:
                                         CLS.clearScreen();
@@ -57,4 +62,39 @@ public class Main {
                         System.out.println();
                 }while (!isExit);
         }
+        public static void loginCustomer(){
+                input = new Scanner(System.in);
+                Customer login = new Customer();
+                login.regisCustomer();
+                System.out.println("\n|+===========================================+|");
+                System.out.println("|             W E L C O M E  B A C K!         |");
+                System.out.println("|+-------------------------------------------+|");
+                System.out.println("|                  LOG IN PENGGUNA            |");
+                System.out.println("|+===========================================+|");
+
+                String username = "", password = "";
+                while (true){
+                        boolean isValid = false;
+                        while (!isValid){
+                                System.out.print("Masukkan Username : ");
+                                username = input.nextLine();
+                                if (username.equals("0"))
+                                        break;
+                                System.out.print("Masukkan Password : ");
+                                password = input.nextLine();
+
+                                login = new Customer(username, password);
+                                isValid = login.isValidCustomer();
+
+                                if (!isValid)
+                                        System.out.println("Username or Password is incorrect! Try again.\n");
+                        } //Validate and verify manager
+                        if (username.equals("0")){
+                                continue;
+                        }
+                        beranda();
+                }
+        }
+
 }
+

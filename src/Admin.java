@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class AdminLogin {
+public class Admin {
     public void admin() {
         //set username dan password admin
         String username = "admin";
@@ -36,4 +36,5 @@ public class AdminLogin {
         }
 
     }
+
 }
