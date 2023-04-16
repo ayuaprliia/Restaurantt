@@ -11,6 +11,7 @@ public class AdminLogin {
         boolean login = false; //untuk validasi input username dan password
 
         while (!login) {
+            CLS.clearScreen();
             System.out.println("\n===============================");
             System.out.println("---------LOG IN ADMIN----------");
             System.out.println(" Masukkan data yang diperlukan!");

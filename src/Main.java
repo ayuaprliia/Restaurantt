@@ -17,11 +17,12 @@ public class Main {
         public static void beranda(){
                 Scanner input = new Scanner(System.in);
                 AdminLogin loginadmin = new AdminLogin();
-                CustomerLogin customer = new CustomerLogin();
+                Customer customer = new Customer();
                 int pilih;
                 boolean isExit = false;
 
                 do{
+                        CLS.clearScreen();
                         System.out.println("\n|=======================================|");
                         System.out.println("|               FOOD RUSH               |");
                         System.out.println("|  YOUR NUMBER 1 FOOD DELIVERY SERVICE  |");
@@ -31,7 +32,7 @@ public class Main {
                         System.out.println("| [3] Keluar                            |");
                         System.out.println("|=======================================|");
 
-                        System.out.println("Masukkan Pilihan Anda [1][2][3] : ");
+                        System.out.print("Masukkan Pilihan Anda [1][2][3] : ");
                         pilih = input.nextInt();
 
                         switch (pilih) {
@@ -42,6 +43,7 @@ public class Main {
                                         customer.LoginCustomer();
                                         break;
                                 case 3:
+                                        CLS.clearScreen();
                                         System.out.println("|======================================|");
                                         System.out.println("|          ANDA MEMILIH KELUAR         |");
                                         System.out.println("|              TERIMA KASIH            |");
@@ -49,7 +51,7 @@ public class Main {
                                         isExit = true;
                                         break;
                                 default:
-                                        System.out.println("Mohon Input Sesuai Arahan!");
+                                        System.out.print("Mohon Input Sesuai Arahan!");
                                         break;
                         }
                         System.out.println();
