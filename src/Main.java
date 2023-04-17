@@ -32,7 +32,8 @@ public class Main {
                         System.out.println("|  YOUR NUMBER 1 FOOD DELIVERY SERVICE  |");
                         System.out.println("|---------------------------------------|");
                         System.out.println("| [1] Masuk sebagai Admin               |");
-                        System.out.println("| [2] Masuk sebagai Pelanggan           |");
+                        System.out.println("| [2] Registrasi Akun Pelanggan Baru    |");
+                        System.out.println("| [3] Masuk sebagai Pelanggan           |");
                         System.out.println("| [3] Keluar                            |");
                         System.out.println("|=======================================|");
 
@@ -43,11 +44,14 @@ public class Main {
                                 case 1:
                                         loginadmin.admin();
                                         break;
-
                                 case 2:
+                                        customer.regisCustomer();
+                                        break;
+
+                                case 3:
                                         loginCustomer();
                                         break;
-                                case 3:
+                                case 4:
                                         CLS.clearScreen();
                                         System.out.println("|======================================|");
                                         System.out.println("|          ANDA MEMILIH KELUAR         |");
@@ -63,38 +67,40 @@ public class Main {
                 }while (!isExit);
         }
         public static void loginCustomer(){
-                input = new Scanner(System.in);
-                Customer login = new Customer();
-                login.regisCustomer();
-                System.out.println("\n|+===========================================+|");
-                System.out.println("|             W E L C O M E  B A C K!         |");
-                System.out.println("|+-------------------------------------------+|");
-                System.out.println("|                  LOG IN PENGGUNA            |");
-                System.out.println("|+===========================================+|");
+                Scanner input = new Scanner(System.in);
+                boolean isLoggedIn = false; //untuk memeriksa apakah data saat log in sama dengan data pada saar registrasi akun
+                String username, password;
 
-                String username = "", password = "";
-                while (true){
-                        boolean isValid = false;
-                        while (!isValid){
-                                System.out.print("Masukkan Username : ");
-                                username = input.nextLine();
-                                if (username.equals("0"))
-                                        break;
-                                System.out.print("Masukkan Password : ");
-                                password = input.nextLine();
+                while (!isLoggedIn) {
+                        System.out.println("\n|+======================================+|");
+                        System.out.println("|                 LOG IN                | ");
+                        System.out.println("|+======================================+|");
+                        System.out.print("Masukkan username : ");
+                        username = input.nextLine();
+                        System.out.print("Masukkan password : ");
+                        password = input.nextLine();
 
-                                login = new Customer(username, password);
-                                isValid = login.isValidCustomer();
+                        if (Customer.isCustomerRegistered(username)) { //untuk mengecek apakah log in berhasil atau tidak
+                                isLoggedIn = Customer.login(username, password);
 
-                                if (!isValid)
-                                        System.out.println("Username or Password is incorrect! Try again.\n");
-                        } //Validate and verify manager
-                        if (username.equals("0")){
-                                continue;
+                                if (!isLoggedIn) { //kalau login tidak berhasil
+                                        System.out.println("|+======================================+|");
+                                        System.out.println("|     USERNAME ATAU PASSWORD SALAH!      |");
+                                        System.out.println("|+======================================+|");
+                                } else { //kalau log in berhasil
+                                        System.out.println("|+======================================+|");
+                                        System.out.println("|         BERHASIL LOGIN!               |");
+                                        System.out.println("|+======================================+|");
+                                }
+                        } else { //kalau akun belum terdaftar
+                                System.out.println("|+======================================+|");
+                                System.out.println("|     AKUN TIDAK TERDAFTAR!              |");
+                                System.out.println("|+======================================+|");
+                                System.out.print("Press any key to continue..."); //untuk lanjut ke menu berikutnya
+                                input.nextLine(); //membaca input user
+                                beranda();
                         }
-                        beranda();
                 }
         }
-
 }
 

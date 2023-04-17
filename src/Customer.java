@@ -1,5 +1,4 @@
-import java.net.SocketTimeoutException;
-import java.sql.SQLOutput;
+
 import java.util.*;
 public class Customer {
     private String nama, username, password;
@@ -40,7 +39,7 @@ public class Customer {
         this.password = password;
     }
 
-    public void regisCustomer(){
+    public  void regisCustomer(){
         Scanner scanner = new Scanner(System.in);
         Main login = new Main();
         credential(); //menerima input detail data customer/pelanggan
@@ -53,6 +52,7 @@ public class Customer {
                 System.out.println("|             Akun sudah terdaftar!         |");
                 System.out.println("|+=========================================+|");
                 break;
+
             }
         }//memeriksa apakah data customer cocok dengan CustomerLogin
         if (!isCustomerLoginExist){
@@ -60,7 +60,7 @@ public class Customer {
             System.out.println("|+=========================================+|");
             System.out.println("|          Akun Berhasil Ditambahkan!       |");
             System.out.println("|+=========================================+|");
-        }
+        }login.beranda();
     }
 
     public void credential(){
@@ -97,6 +97,21 @@ public class Customer {
                 isValid = true;
         }
         return isValid; //memvalidasi data customer
+    }
+    public static boolean isCustomerRegistered(String username) {
+        for (Customer customer : customers) {
+            if (customer.username.equals(username))
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean login(String username, String password) {
+        for (Customer customer : customers) {
+            if (customer.username.equals(username) && customer.password.equals(password))
+                return true;
+        }
+        return false;
     }
 
     }

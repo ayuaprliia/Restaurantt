@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Admin {
+    private static Scanner input;
     public void admin() {
         //set username dan password admin
         String username = "admin";
@@ -36,5 +37,43 @@ public class Admin {
         }
 
     }
+    public static void actionAdmin(char access){
+        aksesAdmin.menuAdmin();
 
+
+    }
+        static class aksesAdmin{
+            public static void menuAdmin(){
+                System.out.println("|================================================|");
+                System.out.println("|                    FOOD RUSH                   |");
+                System.out.println("|       YOUR NUMBER 1 FOOD DELIVERY SERVICE      |");
+                System.out.println("|------------------------------------------------|");
+                System.out.println("|                    MENU ADMIN                  |");
+                System.out.println("``````````````````````````````````````````````````");
+                System.out.println("| [1] Lihat List Restoran                        |");
+                System.out.println("| [2] Tambah Restoran                            |");
+                System.out.println("| [3] Hapus Restoran                             |");
+                System.out.println("| [4] Keluar                                     |");
+                System.out.println("|================================================|");
+            }
+        }
+    public static void enterMenu(){
+        char access = ' ';
+        while(access!='4'){
+            while (!(access>='1' && access<='4')){
+                System.out.print("Masukkan pilihan Anda [1][2][3][4]: ");
+                String systemAccess = input.nextLine();
+                if (systemAccess.length() >= 1 && !(access>='1' && access<='4'))
+                    access = systemAccess.charAt(0);
+                if (!(access>='1' && access<='4'))
+                    System.out.println("Invalid System Access! Try again.");
+            } //Validate user option
+
+            actionAdmin(access); //Enter chosen system access
+
+            if (access!='4')
+                access = ' '; //Resetting access value to repeat menu option
+        }
+        System.out.println( " Successfully Logged Out.");
+    }
 }
