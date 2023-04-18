@@ -2,6 +2,10 @@ TUGAS PBO 2205551030_KOMANG AYU AGUNG ARYA APRILIA
 
 Membuat program pemesanan makanan online berbasis _command line_
 
+UML:
+![UML](https://user-images.githubusercontent.com/114905113/232831339-625866d4-e9ed-4c36-9ed3-4b148eab460c.png)
+program pemesanan makanan online berbasis command line merupakan suatu program bahasa java yang memiliki dua tipe user, yaitu admin dan cuatomer. admin mmeiliki akses untuk melihat list restoran, menambahkan list restoran beserta menu makanan dan minumannya, dan menghapus restoran. Customer memiliki akses untuk melihat daftar restoran beserta menunya dan dapat melakukan pemesanan makanan. setelah memesan makanan, customer dapat melihat receipt atau struk pemesanan.
+
 
 A. Input dan Output Program
 
