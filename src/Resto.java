@@ -335,8 +335,8 @@ public class Resto {
             System.out.println("|                        FOOD RUSH                        |");
             System.out.println("|           YOUR NUMBER 1 FOOD DELIVERY SERVICE           |");
             System.out.println("|---------------------------------------------------------|");
-            System.out.printf ("| %-52s||\n", namaResto);
-            System.out.printf ("| Alamat  : %-52s||\n", alamatResto);
+            System.out.printf ("| %-52s\n", namaResto);
+            System.out.printf ("| Alamat  : %-52s\n", alamatResto);
             System.out.println("----------------------------------------------------------| ");
             System.out.println("|   [1] Menu Makanan                                      |");
             System.out.println("|   [2] Menu Minuman                                      |");
@@ -346,8 +346,8 @@ public class Resto {
         public static void lihatMakananHeader(String namaResto, String alamatResto) {
             System.out.println("|=========================================================|");
             System.out.println("|                             MENU                        |");
-            System.out.printf ("|%-52s||\n", namaResto);
-            System.out.printf ("|Alamat  : %-52s||\n", alamatResto);
+            System.out.printf ("|%-52s\n", namaResto);
+            System.out.printf ("|Alamat  : %-52s", alamatResto);
             System.out.println("| ------------------------------------------------------ -|");
             System.out.println("|   ID    |        NAMA MENU         |      HARGA         |");
             System.out.println("|---------------------------------------------------------|");
@@ -361,10 +361,10 @@ public class Resto {
         public static void lihatMinumanHeader(String namaResto, String alamatResto) {
             System.out.println("|=========================================================|");
             System.out.println("|                             MENU                        |");
-            System.out.printf ("|%-52s||\n", namaResto);
-            System.out.printf ("|Alamat  : %-52s||\n", alamatResto);
+            System.out.printf ("|%-52s\n", namaResto);
+            System.out.printf ("|Alamat  : %-52s", alamatResto);
             System.out.println("| ------------------------------------------------------ -|");
-            System.out.println("|   ID    |        NAMA MENU         |      HARGA         |");
+            System.out.println("\n|   ID    |     NAMA MENU   |      HARGA       ");
             System.out.println("|---------------------------------------------------------|");
         }
         public static void lihatMinumanFooter() {
@@ -375,11 +375,11 @@ public class Resto {
         public static void pesanMakananHeader(String namaResto, String alamatResto) {
             System.out.println("|=========================================================|");
             System.out.println("|                        PEMESANAN                        |");
-            System.out.printf ("|%-52s||\n", namaResto);
-            System.out.printf ("|Alamat  : %-52s||\n", alamatResto);
-            System.out.println("| ------------------------------------------------------ -|");
-            System.out.println("|   ID    |        NAMA MENU         |      HARGA         |");
-            System.out.println("|---------------------------------------------------------|");
+            System.out.printf ("|%-52s\n", namaResto);
+            System.out.printf ("|Alamat  : %-52s", alamatResto);
+            System.out.println("\n| ------------------------------------------------------ -|");
+            System.out.println("|   ID    |    NAMA MENU    |      HARGA         ");
+            System.out.println("|---------------------------------------------------------");
         }
         public static void pesanMakanEnd() {
             System.out.println("|=========================================================|");
@@ -389,10 +389,10 @@ public class Resto {
         public static void pesanMinumheader(String namaResto, String alamatResto) {
             System.out.println("|=========================================================|");
             System.out.println("|                        PEMESANAN                        |");
-            System.out.printf ("|%-52s||\n", namaResto);
-            System.out.printf ("|Alamat  : %-52s||\n", alamatResto);
-            System.out.println("| ------------------------------------------------------ -|");
-            System.out.println("|   ID    |        NAMA MENU         |      HARGA         |");
+            System.out.printf ("|%-52s\n", namaResto);
+            System.out.printf ("|Alamat  : %-52s", alamatResto);
+            System.out.println("\n| ------------------------------------------------------ -|");
+            System.out.println("|   ID    |    NAMA MENU     |      HARGA      ");
             System.out.println("|---------------------------------------------------------|");
         }
         public static void pesanMinumEnd() {
@@ -410,7 +410,7 @@ public class Resto {
             System.out.println("| [1] Tambah nemu makanan                                 |");
             System.out.println("| [2] Tambah menu minumam                                 |");
             System.out.println("| [0] Keluar                                              |");
-            System.out.println("|=========================================================|");
+            System.out.println("\n|=========================================================|");
         }
 
         public static void tambahMEnu(String menu) {

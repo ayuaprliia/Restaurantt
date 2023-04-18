@@ -162,8 +162,8 @@ public class Customer {
                             } else index++;
                         }
                         if (!restaurantFound) { //jika ternyata ID tidak ditemukan
-                            System.out.println("    Maaf, ID Restoran yang Anda masukkan salah, nih.");
-                            System.out.println("    Tekan ENTER untuk kembali.");
+                            System.out.println("ID tidak valid!");
+                            System.out.println("Tekan ENTER untuk kembali.");
                             scanner.nextLine();
                         }
                     }

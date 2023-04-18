@@ -250,7 +250,7 @@ public class Admin {
 
         public static void hapusRestoSukses() {
             System.out.println("|=========================================================|");
-            System.out.println("|                   TAMBAH RESTORAN BERHASIL!!!           |");
+            System.out.println("|                   HAPUS RESTORAN BERHASIL!!!           |");
             System.out.println("|---------------------------------------------------------|");
             System.out.println("| press any key to continue...");
         }
